@@ -59,16 +59,11 @@ Node<int>* sortTwoLists(Node<int>* first, Node<int>* second)
             second = second->next;
         }
     }
-    while(first!=NULL){
+    if(first!=NULL){
         temp->next = first;
-        temp = first;
-        first=first->next;
-
     }
-    while(second!=NULL){
+    if(second!=NULL){
         temp->next = second;
-        temp = second;
-        second = second->next;
     }
     return head;
 }
