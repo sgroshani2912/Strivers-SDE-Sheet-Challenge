@@ -13,3 +13,32 @@ void immediateSmaller(vector<int>& a)
 	a[n-1] = -1;
 	return;
 }
+
+//Using stack, TC=O(N), SC = O(N)
+#include <bits/stdc++.h>
+void immediateSmaller(vector<int>& a)
+{
+	stack<int> st;
+	int n = a.size();
+	if(n<1) return; 
+	for(int i=n-1; i>0; i--){
+		st.push(a[i]);
+	}
+	int x = 0;
+	while(x<n-1){
+		if(st.top() < a[x]){
+			a[x] = st.top();
+			
+		}
+		else{
+			a[x] = -1;
+			
+		}
+		st.pop();
+		x++;
+	}
+	
+	a[n-1] = -1;
+	return;
+}
+
